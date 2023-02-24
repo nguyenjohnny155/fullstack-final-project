@@ -113,9 +113,9 @@ export default function ButtonAppBar() {
 
   return (
     <ThemeProvider theme={theme}>
-    <Box sx={{ flexGrow: 1, width: '99vw', maxWidth: '99%'}} 
+    <Box sx={{ flexGrow: 1, width: '100vw', maxWidth: '100%'}} 
     >
-      <AppBar position="fixed" style={{zIndex: 1251}}>
+      <AppBar position="sticky" style={{zIndex: 1251}}>
         <Toolbar>
               <IconButton
                 size="large"
