@@ -1,10 +1,7 @@
 using Microsoft.AspNetCore.Authorization;    
 using Microsoft.AspNetCore.Mvc;    
-using Microsoft.Extensions.Configuration;    
 using Microsoft.IdentityModel.Tokens;    
-using System;    
 using System.IdentityModel.Tokens.Jwt;    
-using System.Security.Claims;    
 using System.Text;    
     
 namespace JWTAuthentication.Controllers    
@@ -36,7 +33,7 @@ namespace JWTAuthentication.Controllers
             return response;    
         }    
 
-        // Generate Token to be responded back to Client and stored in localStorage.    
+        // Generate Authentication Token
         private string GenerateJSONWebToken(User userInfo)    
         {    
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));    
