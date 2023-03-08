@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ButtonAppBar from '../components/navbar/Navbar';
 import ProductCard from '../components/cards/ProductCard.tsx';
 
@@ -6,7 +6,21 @@ import PhobGccMotherboard from '../assets/phobgcc-2.0.2-motherboard-only.png';
 import PhobGccControllerBlack from '../assets/budget-phobgcc-2.0.2-controller-black.png';
 import Box from '@mui/material/Box';
 
+
 export default function HomePage() {
+
+    const clickHandler = async() => {
+
+        const data = await fetch('/api/Shop')
+         .then((response) => {
+            return response;
+         })
+         .catch((error) => {
+            console.log(error);
+         });
+
+    };
+
     return (
         <div>
             <ButtonAppBar/>
@@ -17,6 +31,8 @@ export default function HomePage() {
                     alignItems: 'center',
                     maxWidth: '100%'
                 }}>
+
+                <button type="button" onClick={clickHandler}> Click me! </button>
 
                 <ProductCard 
                     imageSrc={PhobGccControllerBlack} 

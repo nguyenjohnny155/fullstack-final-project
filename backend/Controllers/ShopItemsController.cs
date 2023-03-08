@@ -8,11 +8,14 @@ using Microsoft.EntityFrameworkCore;
 using ShopApi.Models;
 using InterfaceShop;
 using ShopDemo;
+using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ShopController : ControllerBase
     {
         readonly IShop _shop;
@@ -23,7 +26,16 @@ namespace backend.Controllers
         [HttpGet]
         public ActionResult<List<Shop>> Get()
         {
-            return Ok(_shop.GetShopItems());
+            var response = new HttpResponseMessage();
+            var Coki = new CookieHeaderValue("session-Id", "123");
+            Coki.Expires = DateTimeOffset.Now.AddDays(2);
+            Coki.Domain = Request.Host.ToString();   
+            Coki.Path = "/";
+
+            response.Headers.AddCookies(new CookieHeaderValue[] {Coki});
+
+            return Ok(response);
+            //return Ok(_shop.GetShopItems());
         }
 
         [HttpPost]
@@ -33,6 +45,7 @@ namespace backend.Controllers
 
             return Ok();
         }
+
     }
 }
 

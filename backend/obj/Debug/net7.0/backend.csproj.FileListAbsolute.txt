@@ -280,3 +280,9 @@
 /home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/Microsoft.AspNetCore.JsonPatch.dll
 /home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/Newtonsoft.Json.Bson.dll
+/home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/System.Net.Http.Formatting.dll
+/home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/System.Web.Cors.dll
+/home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/System.Web.Http.dll
+/home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/System.Web.Http.Cors.dll
+/home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.Google.dll
+/home/vmuser/Desktop/Apps/fullstack-final-project/backend/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
