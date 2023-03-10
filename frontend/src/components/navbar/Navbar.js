@@ -25,6 +25,7 @@ import AppsIcon from '@mui/icons-material/Apps';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import LoginIcon from '@mui/icons-material/Login';
+import { Link, useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,6 +45,8 @@ export default function ButtonAppBar() {
     right: false,
   });
 
+  const navigate = useNavigate();
+
   const toggleDrawer = (anchor, open) => (event) => {
     if(event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')){
       return;
@@ -61,8 +64,8 @@ export default function ButtonAppBar() {
     >
       <List>
         {['Home', 'Trending', 'Random', 'Images', 'Search', 'Browse', 'Apps'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
+          <ListItem key={text} disablePadding c>
+            <ListItemButton key={text} component={Link} to={`/${text}`}>
               <ListItemIcon>
                 {
                   text === 'Home' ? <HomeIcon/> : 
@@ -84,7 +87,7 @@ export default function ButtonAppBar() {
       <List>
         {['Sign In', 'Create Account'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton key={text} component={Link} to={`/${text}`}>
               <ListItemIcon>
                 {text === 'Sign In' ? <LoginIcon/> : 
                  text === 'Create Account' ? <PersonAddIcon/> :
@@ -99,7 +102,7 @@ export default function ButtonAppBar() {
       <List>
         {['Discord'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton key={text} component={Link} to={`/${text}`}>
               <ListItemIcon>
                  <ConstructionIcon/> {/* Discord Icon goes here */}
               </ListItemIcon>

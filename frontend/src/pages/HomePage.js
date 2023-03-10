@@ -32,7 +32,6 @@ export default function HomePage() {
                     maxWidth: '100%'
                 }}>
 
-                <button type="button" onClick={clickHandler}> Click me! </button>
 
                 <ProductCard 
                     imageSrc={PhobGccControllerBlack} 
