@@ -50,16 +50,31 @@ public class Shop : IShop
         }
     }
 
+    public async Task<ShopItem> GetShopItem(int id){
+        await using(var context = new ShopContext()){
+            var item = context.ShopItems.FirstOrDefault(a => a.Id == id);
+            return item;
+        } 
+    }
+
     public async Task<ShopItem> AddShopItems(ShopItem itemToAdd)
     {
         await using (var context = new ShopContext()) 
         {
+            // Copy list of add ons
+            var addOnsTable = new List<ItemAddOn> {};
+            for(int i = 0; i < itemToAdd.ItemAddOns.Count; ++i){
+                addOnsTable.Add(new ItemAddOn { Name = itemToAdd.ItemAddOns[i].Name, Price = itemToAdd.ItemAddOns[i].Price });
+            }
+
+            // Add ShopItem to Database Table
             var list = context.ShopItems.Add(new ShopItem {
                 ItemName = itemToAdd.ItemName,
                 ItemBasePrice = itemToAdd.ItemBasePrice,
-                ItemAddOns = new List<ItemAddOn> {
-                    new ItemAddOn { Name = itemToAdd.ItemAddOns[0].Name, Price = itemToAdd.ItemAddOns[0].Price} 
-                }
+                Rating = itemToAdd.Rating,
+                NumReviews = itemToAdd.NumReviews,
+                ItemAddOns = addOnsTable,
+                S3BaseUrl = itemToAdd.S3BaseUrl
             });
 
             context.SaveChanges();

@@ -38,17 +38,6 @@ builder.Services.AddScoped<IShop, Shop>();
 builder.Services.AddControllers()
     .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
-/*
-builder.Services.AddAuthentication()
-    .AddGoogle(googleOptions => {
-        //googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-        //googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-
-        googleOptions.ClientId = "547563543724-ou44189p059fgs29tih947au1o366n2r.apps.googleusercontent.com";
-        googleOptions.ClientSecret = "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";
-    });
-*/
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
