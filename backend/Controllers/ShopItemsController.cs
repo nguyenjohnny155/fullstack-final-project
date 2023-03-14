@@ -41,7 +41,6 @@ namespace backend.Controllers
             return Ok(response);
         }
 
-
         [HttpPost]
         public async Task<ActionResult<ShopItem>> PostShopItem(ShopItem shopItem)
         {

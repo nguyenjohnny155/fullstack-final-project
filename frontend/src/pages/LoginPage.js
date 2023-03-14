@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,11 +13,16 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { AuthContext } from '../contexts/AuthContext';
+import Alert from '@mui/material/Alert';
+import { Navigate } from 'react-router-dom';
 
 function Copyright(props) {
+
+
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+      {'Copyright © DanzoShop'}
       <Link color="inherit" href="https://mui.com/">
         
       </Link>{' '}
@@ -29,14 +35,50 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function LoginPage() {
+
+  const {setAuthToken} = useContext(AuthContext);
+  const [isLogin, setLogin] = useState(false);
+  const [getNumAttempts, setNumAttempts] = useState(0);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
+    const requestArgs = ({
       password: data.get('password'),
+      emailAddress: data.get('email')
     });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(requestArgs)
+    };
+
+    try{
+      fetch('/api/Login', requestOptions)
+        .then(response => response.json())
+        .then(data => {
+         
+          if(data.status === 200){
+            console.log('Login authenticated. Generating authorization token...')
+            setAuthToken(data);
+            setLogin(true);
+            console.log('Token saved to client!')
+          }
+
+          else if (data.status === 401) {
+            console.log('Login failed. Please check your credentials.');
+            setNumAttempts(getNumAttempts + 1);
+          }
+        });
+    } 
+    catch(error){
+      console.log(error);
+    }
+
   };
+
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -50,12 +92,15 @@ export default function LoginPage() {
             alignItems: 'center',
           }}
         >
+          {isLogin ? <Navigate to="/Home"/> : <></>}
+
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+          { getNumAttempts && isLogin === false ? <Alert severity='error'> There was a problem. We cannot find an account with the provided credentials </Alert> : <></>}
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"

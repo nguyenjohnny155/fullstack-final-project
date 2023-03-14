@@ -27,7 +27,7 @@ namespace JWTAuthentication.Controllers
             if (user != null)    
             {    
                 var tokenString = GenerateJSONWebToken(user);    
-                response = Ok(new { token = tokenString });    
+                response = Ok(new { status = 200, token = tokenString });    
             }    
     
             return response;    
@@ -54,7 +54,7 @@ namespace JWTAuthentication.Controllers
             User user = null;    
 
             // A secured database, preferablly SMSS TSQL is required to securely store user and password
-            if (login.Username == "Johnny" & login.Password == "password123")    
+            if (login.EmailAddress == "test@gmail.com" & login.Password == "password123")    
             {    
                 user = new User { Username = "Johnny", EmailAddress = "test@gmail.com" };    
             }    
