@@ -1,0 +1,18 @@
+version: '3'
+services:
+  backend:
+    container_name: backend
+    build: ./backend/
+    restart: always
+    ports:
+      - "8080:8080"
+
+  frontend:
+    container_name: frontend
+    build: ./frontend/
+    restart: always
+    ports:
+      - "88:80" # We need to map here for convenience, so we don't conflict with a potential possible local server
+    environment:
+      - BACKEND_IP=backend
+      - BACKEND_PORT=5058
