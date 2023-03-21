@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vQStVpT1J1WasusYrS+n7q2VsmcIkrDNG1ZyLhFYCsH1wRe/mhEycTt03QiU7hG+wSD4hkQ9NR4nbSy9wk+RTQ==",
+  "dgSpecHash": "+sJ+ZcEF2ofgYfIfliQnZIHlGQoZS6mxLMl0704G6sSeVbLbl/ZHBbeoLiWXHTcwbabSeHSyxFlTdkFFiI1uJQ==",
   "success": true,
-  "projectFilePath": "/home/vmuser/Desktop/Apps/fullstack-final-project/backend/backend.csproj",
+  "projectFilePath": "/home/vmuser/Desktop/repos/fullstack-final-project/backend/backend.csproj",
   "expectedPackageFiles": [
     "/home/vmuser/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/home/vmuser/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",

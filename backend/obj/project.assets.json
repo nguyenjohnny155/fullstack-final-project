@@ -11541,11 +11541,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/vmuser/Desktop/Apps/fullstack-final-project/backend/backend.csproj",
+      "projectUniqueName": "/home/vmuser/Desktop/repos/fullstack-final-project/backend/backend.csproj",
       "projectName": "backend",
-      "projectPath": "/home/vmuser/Desktop/Apps/fullstack-final-project/backend/backend.csproj",
+      "projectPath": "/home/vmuser/Desktop/repos/fullstack-final-project/backend/backend.csproj",
       "packagesPath": "/home/vmuser/.nuget/packages/",
-      "outputPath": "/home/vmuser/Desktop/Apps/fullstack-final-project/backend/obj/",
+      "outputPath": "/home/vmuser/Desktop/repos/fullstack-final-project/backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/vmuser/.nuget/NuGet/NuGet.Config"
@@ -11654,7 +11654,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
   },
