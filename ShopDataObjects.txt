@@ -1,0 +1,82 @@
+INSTRUCTIONS: POST these objects individually
+
+VERB: POST
+IP: localhost:5038/api/Shop
+SETTINGS: Body -> raw -> JSON
+JSON OBJECTS: 
+
+{
+  "id": 0,
+  "itemName": "PhobGCC 2.0.2 Controller",
+  "itemBasePrice": 198.99,
+  "rating": 4.9,
+  "numReviews": 2273,
+  "itemAddOns": [
+    {
+      "id": 0,
+      "name": "Mouseclick Z",
+      "price": 9.00
+    }
+  ],
+  "s3BaseUrl": "https://webdev-final-project.s3.us-west-2.amazonaws.com/budget-phobgcc-2.0.2-controller-black.png"
+}
+
+{
+  "id": 0,
+  "itemName": "Custom Emerald Green Buttons",
+  "itemBasePrice": 39.00,
+  "rating": 4,
+  "numReviews": 742,
+  "itemAddOns": [
+  ],
+  "s3BaseUrl": "https://webdev-final-project.s3.us-west-2.amazonaws.com/gcc-custom-buttons-emerald-green.png"
+  
+}
+
+{
+  "id": 0,
+  "itemName": "GCC Black Paracord",
+  "itemBasePrice": 39.00,
+  "rating": 4.4,
+  "numReviews": 323,
+  "itemAddOns": [
+
+    {
+      "id": 0,
+      "name": "5ft",
+      "price": 0
+    },
+
+    {
+      "id": 0,
+      "name": "12ft",
+      "price": 15.00
+    }
+  ],
+  "s3BaseUrl": "https://webdev-final-project.s3.us-west-2.amazonaws.com/gcc-custom-paracord-black.png"
+  
+}
+
+{
+  "id": 0,
+  "itemName": "PhobGCC 2.0.2 Motherboard",
+  "itemBasePrice": 119.99,
+  "rating": 5.0,
+  "numReviews": 8731,
+  "itemAddOns": [
+
+    {
+      "id": 0,
+      "name": "DIY Kit",
+      "price": 19.00
+    },
+
+    {
+      "id": 0,
+      "name": "Presoldered",
+      "price": 0
+    }
+  ],
+  "s3BaseUrl": "https://webdev-final-project.s3.us-west-2.amazonaws.com/phobgcc-2.0.2-motherboard-only.png"
+  
+}

@@ -56,7 +56,7 @@ export default function LoginPage() {
 
     try{
       // TESTING LOCALHOST:3080
-      fetch('http://backend:3080/api/Login', requestOptions)
+      fetch('/api/Login', requestOptions)
         .then(response => response.json())
         .then(data => {
          
